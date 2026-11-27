@@ -29,6 +29,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Crea il sito Pages se non esiste ancora, così il primo deploy non richiede
+          # di impostare a mano Settings > Pages > Source: GitHub Actions
+          enablement: true
 
       - name: Installa le dipendenze
         run: bun install --frozen-lockfile
