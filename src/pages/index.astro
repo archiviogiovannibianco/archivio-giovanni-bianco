@@ -1,0 +1,503 @@
+---
+import Base from '../layouts/Base.astro';
+import { opere } from '../data/opere';
+
+const base = import.meta.env.BASE_URL;
+const img = (file: string) => `${base}images/${file}`;
+---
+
+<Base
+  title="Giovanni Bianco, scultore del legno di Sersale"
+  description="La storia e le opere di Giovanni Bianco (1942–1995), scultore calabrese di Sersale: il Michelangelo del legno tra natura, volti, impegno politico e memoria."
+  image="hero-giovanni-bianco.jpg"
+>
+  <!-- HERO -->
+  <section class="gb-hero">
+    <div class="gb-hero-grid">
+      <div class="gb-hero-copy">
+        <p class="gb-eyebrow">Scultore del legno · Sersale, Calabria · 1942–1995</p>
+        <h1>Giovanni<br /><em>Bianco</em></h1>
+        <p class="gb-hero-sub">Il Michelangelo del legno</p>
+        <p class="gb-hero-lead">
+          Da una radice faceva nascere un bambino, da un tronco un’aquila, da semplici rami
+          intrecciati una donna con in braccio il suo bambino.
+        </p>
+        <p class="gb-hero-note">Da un cartello esposto in una mostra a Sersale</p>
+        <div class="gb-actions">
+          <a class="gb-btn gb-btn--solid" href="#opere">Scopri le opere</a>
+          <a class="gb-btn" href="#storia">La sua storia</a>
+        </div>
+      </div>
+      <figure class="gb-hero-figure">
+        <img
+          src={img('hero-giovanni-bianco.jpg')}
+          alt="Ritratto in bianco e nero di Giovanni Bianco tra le sue sculture in legno"
+          width="1800"
+          height="1268"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="gb-section gb-intro" id="storia">
+    <div class="gb-wrap gb-intro-grid">
+      <div>
+        <p class="gb-kicker">Ritratto</p>
+        <h2>Uno scultore<br />nato dalla terra</h2>
+        <figure class="gb-intro-portrait">
+          <img
+            src={img('ritratto-giovanni-bianco.jpg')}
+            alt="Giovanni Bianco in campagna con un fiore in mano"
+            width="1400"
+            height="838"
+            loading="lazy"
+          />
+          <figcaption>
+            Giovanni Bianco in campagna, in una fotografia dell’archivio familiare.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="gb-prose">
+        <p class="gb-drop">
+          Giovanni Bianco (4 giugno 1942 – 1 dicembre 1995) è lo scultore che Sersale,
+          nell’entroterra di Catanzaro, ricorda come il «Michelangelo del legno». Di origine
+          contadina, ha trasformato tronchi, radici e rami in un popolo di volti, animali e figure
+          femminili: un’opera nata dalla terra e dalla vita quotidiana, lontana dalle accademie e
+          vicina al mistero delle cose.
+        </p>
+        <p>
+          Nel suo laboratorio — una stanza, un cortile, un banco da lavoro — il legno non era
+          materia inerte ma una forma già presente, da liberare. Da una radice poteva nascere un
+          bambino, da un tronco un’aquila, da rami intrecciati una donna con il figlio in braccio. È
+          questa la suggestione che accompagna ancora oggi le sue sculture.
+        </p>
+        <p>
+          La sua storia è legata a Sersale e a Sellia Marina, dove in contrada Olivella aveva
+          allestito una mostra permanente delle sue opere. Nel 1985 il «Giornale di Calabria» gli
+          dedicò un articolo dal titolo <em>Giovanni Bianco scultore del legno</em>: il ritratto di
+          un artista semplice, che viveva in campagna e lavorava ogni giorno con le mani.
+        </p>
+        <p class="gb-signature">«Un pezzo di legno, lavorato con pazienza contadina e grande amore»</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="gb-section gb-story">
+    <div class="gb-wrap gb-story-grid">
+      <div class="gb-story-media">
+        <figure>
+          <img
+            src={img('artista-accarezza-le-sue-opere.jpg')}
+            alt="Giovanni Bianco accanto alle sue sculture nel cortile di casa"
+            width="936"
+            height="1400"
+            loading="lazy"
+          />
+          <figcaption>
+            «Dopo tanti giorni di lavoro l’artista accarezza le sue opere» — didascalia originale.
+          </figcaption>
+        </figure>
+      </div>
+      <div>
+        <p class="gb-kicker">La vita, il lavoro</p>
+        <h2>Il legno come<br />lingua materna</h2>
+        <p>
+          «Di origine contadina Bianco ha un grande amore: la scultura e l’arte. E riesce ad essere
+          un vero artista». Così lo presentava, nel settembre 1985, il giornalista Rosario
+          Stanizzi. Un artista che non aveva bisogno di un atelier urbano: il suo studio era la
+          casa, il cortile, il paesaggio delle colline calabresi.
+        </p>
+        <p>
+          Le fotografie dell’archivio lo mostrano al lavoro ovunque — sul portellone di un furgone,
+          in mezzo alla strada, davanti a un ceppo — con martello e scalpello. «Qualsiasi luogo, in
+          qualsiasi momento, è buono per creare», annota una didascalia. E poi il momento della
+          sosta: «Dopo tanti giorni di lavoro l’artista accarezza le sue opere».
+        </p>
+        <p>
+          Accanto alle sculture, il laboratorio custodiva disegni, bassorilievi, piccoli oggetti,
+          maschere. Un universo di creature che convivevano con lui, come in una famiglia
+          allargata. «Nel laboratorio immerso nelle sue creature», recita un’altra etichetta.
+        </p>
+        <blockquote>
+          «Bianco è uno scultore semplice e vive una vita semplice: è contento quando la sera, dopo
+          aver dato uno sguardo alle sue opere, va a dormire.»
+          <cite>Rosario Stanizzi, «Giornale di Calabria», 25 settembre 1985</cite>
+        </blockquote>
+      </div>
+    </div>
+    <div class="gb-wrap">
+      <figure class="gb-story-banner">
+        <img
+          src={img('laboratorio-dellartista.jpg')}
+          alt="Il laboratorio di Giovanni Bianco pieno di sculture in legno"
+          width="1554"
+          height="1115"
+          loading="lazy"
+        />
+        <figcaption>«Nel laboratorio immerso nelle sue creature» — didascalia originale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="gb-section gb-themes">
+    <div class="gb-wrap">
+      <div class="gb-themes-head">
+        <div>
+          <p class="gb-kicker">Temi</p>
+          <h2>Un mondo scolpito<br />a mano</h2>
+        </div>
+        <p class="gb-lead" style="max-width:38ch;margin:0">
+          Tre fili attraversano l’opera di Bianco: la natura, i volti, l’impegno civile.
+        </p>
+      </div>
+      <div class="gb-theme-grid">
+        <article class="gb-theme">
+          <span class="gb-num">01</span>
+          <h3>La natura</h3>
+          <p>
+            Animali, alberi, radici: la natura è il vocabolario primo della sua scultura. Il legno
+            conserva nodi, venature, cicatrici; l’artista li asseconda invece di cancellarli. «Nelle
+            sue opere privilegia l’amore per la natura, soprattutto per gli animali», scriveva il
+            «Giornale di Calabria».
+          </p>
+        </article>
+        <article class="gb-theme">
+          <span class="gb-num">02</span>
+          <h3>I volti</h3>
+          <p>
+            Teste maschili e femminili, sguardi intensi, capelli scolpiti a ciocche. Nei volti
+            Bianco cercava la memoria delle persone e delle epoche: «sguardi intensi di uomini che
+            hanno caratterizzato determinate epoche importanti, donne in cerca d’amore».
+          </p>
+        </article>
+        <article class="gb-theme">
+          <span class="gb-num">03</span>
+          <h3>L’impegno</h3>
+          <p>
+            La sua non era una scultura apartitica. Il cartello di Sersale lo ricorda come uno
+            «spirito libero, sovrano», che «da buon marxista» criticava il capitalismo e la guerra.
+            Le opere dai titoli lunghi — come <em
+              >Decadenza morale materiale e spirituale del sistema capitalistico</em
+            > — sono dichiarazioni politiche scolpite nel legno.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="gb-quote">
+    <div class="gb-wrap">
+      <p>«Tutte le creature della natura hanno un misterioso legame...»</p>
+      <cite>Didascalia manoscritta nell’archivio</cite>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="gb-section gb-works" id="opere">
+    <div class="gb-wrap">
+      <div class="gb-works-head">
+        <p class="gb-kicker">Opere</p>
+        <h2>Sculture<br />da conoscere</h2>
+        <p>
+          Le opere che seguono sono state identificate grazie alle didascalie originali
+          dell’archivio: titoli, materiali, misure e collezioni sono trascritti come annotati. Dove
+          un dato manca, è stato lasciato volutamente incompleto.
+        </p>
+      </div>
+
+      <div class="gb-grid">
+        {
+          opere.map((opera) => (
+            <article class="gb-card">
+              <figure>
+                <img
+                  src={img(opera.immagine)}
+                  alt={opera.alt}
+                  width={opera.larghezza}
+                  height={opera.altezza}
+                  loading="lazy"
+                />
+              </figure>
+              <div class="gb-card-body">
+                <h3>{opera.titolo}</h3>
+                <p class="gb-meta">{opera.scheda}</p>
+                <p>{opera.testo}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <p class="gb-note">
+        Titoli, materiali e misure sono trascritti dalle didascalie originali. Le opere non ancora
+        identificate sono conservate nell’archivio e potranno essere aggiunte in una seconda fase.
+        Per segnalazioni: <a href="mailto:archivio.giovannibianco@gmail.com"
+          >archivio.giovannibianco@gmail.com</a
+        >.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXHIBITIONS -->
+  <section class="gb-section gb-exh" id="mostre">
+    <div class="gb-wrap">
+      <div class="gb-works-head">
+        <p class="gb-kicker">Mostre e premi</p>
+        <h2>Le tracce<br />documentate</h2>
+        <p>
+          L’archivio conserva fotografie, ritagli e didascalie che permettono di ricostruire alcune
+          tappe pubbliche del lavoro di Bianco. Le date sono quelle annotate; dove mancano, il
+          percorso resta aperto.
+        </p>
+      </div>
+
+      <div class="gb-exh-grid">
+        <div class="gb-timeline">
+          <article class="gb-tl-item">
+            <div class="gb-year">1985</div>
+            <div>
+              <h3>Sellia Marina, contrada Olivella</h3>
+              <p>
+                Mostra permanente delle opere. Il 25 settembre il «Giornale di Calabria» pubblica
+                l’articolo di Rosario Stanizzi <em>Giovanni Bianco scultore del legno</em>.
+              </p>
+            </div>
+          </article>
+          <article class="gb-tl-item">
+            <div class="gb-year">1986</div>
+            <div>
+              <h3>Petronà (CZ) · 21 agosto</h3>
+              <p>
+                Rassegna di pittura e scultura. L’artista partecipa insieme ad altri artisti
+                calabresi; in mostra anche <em>Pastorello</em> e <em>Figure che si baciano</em>.
+              </p>
+            </div>
+          </article>
+          <article class="gb-tl-item">
+            <div class="gb-year">1986</div>
+            <div>
+              <h3>Cava de’ Tirreni (SA)</h3>
+              <p>
+                Premiazione al Centro d’arte e cultura «L’Iride»: l’artista riceve un diploma e una
+                coppa. La fotografia lo ritrae sul palco con il premio.
+              </p>
+            </div>
+          </article>
+          <article class="gb-tl-item">
+            <div class="gb-year">n.d.</div>
+            <div>
+              <h3>Cropani (CZ)</h3>
+              <p>Esposizione nei saloni della scuola elementare, con sculture e opere incorniciate.</p>
+            </div>
+          </article>
+          <article class="gb-tl-item">
+            <div class="gb-year">n.d.</div>
+            <div>
+              <h3>Lecce</h3>
+              <p>
+                Un’annotazione dell’archivio ricorda la partecipazione a un concorso e alcune opere
+                rubate; l’organizzatrice è indicata come Mafalda Capellupo.
+              </p>
+            </div>
+          </article>
+          <article class="gb-tl-item">
+            <div class="gb-year">n.d.</div>
+            <div>
+              <h3>Sersale</h3>
+              <p>
+                Un allestimento pubblico presenta le sculture insieme a disegni e a un cartello che
+                lo definisce «il Michelangelo del legno».
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="gb-exh-media">
+          <figure>
+            <img
+              src={img('articolo-giornale-di-calabria-1985.jpg')}
+              alt="Ritaglio del Giornale di Calabria del 25 settembre 1985 con l'articolo su Giovanni Bianco"
+              width="1136"
+              height="1600"
+              loading="lazy"
+            />
+            <figcaption>
+              «Giornale di Calabria», mercoledì 25 settembre 1985, pagina 6. Ritaglio conservato
+              nell’archivio.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src={img('premiazione-cava-dei-tirreni-1986.jpg')}
+              alt="Giovanni Bianco premiato a Cava de' Tirreni nel 1986 con diploma e coppa"
+              width="1106"
+              height="1400"
+              loading="lazy"
+            />
+            <figcaption>
+              Premiazione, Cava de’ Tirreni 1986. Sullo sfondo lo striscione del centro «L’Iride».
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="gb-exh-extra">
+        <figure>
+          <img
+            src={img('mostra-petrona-1986.jpg')}
+            alt="Giovanni Bianco con altri artisti alla rassegna di Petronà del 1986"
+            width="1400"
+            height="1044"
+            loading="lazy"
+          />
+          <figcaption>Petronà, 21 agosto 1986: l’artista insieme ad altri artisti calabresi.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={img('mostra-cropani.jpg')}
+            alt="Esposizione delle sculture di Giovanni Bianco nella scuola elementare di Cropani"
+            width="1400"
+            height="1195"
+            loading="lazy"
+          />
+          <figcaption>Cropani: esposizione nei saloni della scuola elementare.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOLEN -->
+  <section class="gb-section gb-stolen">
+    <div class="gb-wrap gb-stolen-grid">
+      <div>
+        <p class="gb-kicker">Memoria ferita</p>
+        <h2>Le opere<br />rubate</h2>
+        <p>
+          Nel 1994, secondo le annotazioni dell’archivio, alcune sculture furono rubate. Tra queste
+          <em>Cagnolino</em> e <em>Aquila</em>, due opere fotografate insieme ad altre creature. Le
+          note segnalano anche opere sottratte in occasione di un concorso a Lecce.
+        </p>
+        <p>La ferita resta aperta: chi avesse notizie può scrivere all’archivio.</p>
+      </div>
+      <div class="gb-stolen-imgs">
+        <figure>
+          <img
+            src={img('opera-cagnolino-rubata-1994.jpg')}
+            alt="Cagnolino e altre piccole sculture in legno, opera rubata nel 1994"
+            width="1400"
+            height="904"
+            loading="lazy"
+          />
+          <figcaption><em>Cagnolino</em> — «Opera rubata 1994», didascalia originale.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={img('opera-aquila-rubata-1994.jpg')}
+            alt="Aquila, grande scultura in legno rubata nel 1994"
+            width="1400"
+            height="870"
+            loading="lazy"
+          />
+          <figcaption><em>Aquila</em> — «Rubata 1994», annotazione originale.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORY -->
+  <section class="gb-section gb-memory">
+    <div class="gb-wrap gb-memory-grid">
+      <figure>
+        <img
+          src={img('allestimento-mostra-sersale.jpg')}
+          alt="Allestimento a Sersale con sculture, disegni e il cartello su Giovanni Bianco"
+          width="1050"
+          height="1400"
+          loading="lazy"
+        />
+        <figcaption>
+          Un allestimento a Sersale: sculture, disegni e il cartello che racconta Giovanni Bianco.
+        </figcaption>
+      </figure>
+      <div>
+        <p class="gb-kicker">La memoria</p>
+        <h2>Il Michelangelo<br />del legno</h2>
+        <p>
+          Un cartello scritto a mano, esposto accanto alle sculture in una mostra a Sersale,
+          riassume l’immagine che la comunità conserva di lui.
+        </p>
+        <blockquote>
+          «Geniale scultore di Sersale, tanto geniale da poterlo definire il Michelangelo del
+          legno... Era uno spirito libero, sovrano... consapevole di essere imprigionato
+          materialmente in questa società che lui combatteva, da buon marxista...»
+        </blockquote>
+        <cite>Cartello manoscritto, mostra a Sersale</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIES -->
+  <section class="gb-section gb-testimonies">
+    <div class="gb-wrap">
+      <div class="gb-test-grid">
+        <article class="gb-test">
+          <blockquote>
+            «Bianco è uno scultore semplice e vive una vita semplice: è contento quando la sera,
+            dopo aver dato uno sguardo alle sue opere, va a dormire.»
+          </blockquote>
+          <cite>Rosario Stanizzi, «Giornale di Calabria», 25 settembre 1985</cite>
+        </article>
+        <article class="gb-test">
+          <blockquote>
+            «Cinque rose rosse cinque / per ricordarti tanta compagnia / per rivedere e rimpensare
+            al magico / pentagono della tua creativa mano...»
+          </blockquote>
+          <cite>Franco Marcello, dedica manoscritta nell’archivio</cite>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="gb-cta" id="contatti">
+    <div class="gb-wrap">
+      <p class="gb-kicker">L’archivio continua</p>
+      <h2>Hai conosciuto<br />Giovanni Bianco?</h2>
+      <p>
+        Se possiedi una sua opera, conservi fotografie, lettere o ricordi, questo spazio è aperto.
+        Le segnalazioni aiutano a completare il catalogo e a restituire alla sua scultura la storia
+        che merita.
+      </p>
+      <a class="gb-btn" href="mailto:archivio.giovannibianco@gmail.com">Scrivi all’archivio</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="gb-footer">
+    <div class="gb-wrap gb-footer-grid">
+      <div>
+        <p>
+          <strong>Giovanni Bianco, scultore del legno</strong><br />4 giugno 1942 – 1 dicembre
+          1995<br />Sersale · Sellia Marina · Calabria
+        </p>
+        <p>
+          Immagini: archivio fotografico privato. Didascalie originali trascritte e integrate;
+          alcuni dati sono ancora da verificare.
+        </p>
+      </div>
+      <div>
+        <p>A cura dell’Archivio Giovanni Bianco.</p>
+        <p>
+          Per segnalazioni, correzioni o richieste di rimozione: <a
+            href="mailto:archivio.giovannibianco@gmail.com">archivio.giovannibianco@gmail.com</a
+          >
+        </p>
+        <p>Ultimo aggiornamento: novembre 2026.</p>
+      </div>
+    </div>
+  </footer>
+</Base>
