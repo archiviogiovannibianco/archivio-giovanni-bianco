@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -28,11 +28,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
-        with:
-          # Crea il sito Pages se non esiste ancora, così il primo deploy non richiede
-          # di impostare a mano Settings > Pages > Source: GitHub Actions
-          enablement: true
+        uses: actions/configure-pages@v6
 
       - name: Installa le dipendenze
         run: bun install --frozen-lockfile
@@ -44,7 +40,7 @@ jobs:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Carica l'artefatto
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
