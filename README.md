@@ -4,6 +4,9 @@ Sito statico dedicato allo scultore Giovanni Bianco (Sersale, 1942–1995), conv
 [Astro](https://astro.build) dalla pagina WordPress originale conservata in
 `../sito-wordpress/`.
 
+- Sito pubblicato: <https://archiviogiovannibianco.github.io/>
+- Repository: <https://github.com/archiviogiovannibianco/archiviogiovannibianco.github.io>
+
 ## Sviluppo
 
 ```bash
@@ -14,20 +17,23 @@ bun run build    # genera dist/
 
 ## Pubblicazione su GitHub Pages
 
-1. Crea un repository su GitHub e collegalo:
+Il repository è di tipo *utente* (`archiviogiovannibianco.github.io`), quindi il sito viene
+servito dalla radice del dominio e non da una sottocartella.
+
+1. Collega il remote e pubblica:
 
    ```bash
-   git remote add origin git@github.com:<utente>/<repo>.git
+   git remote add origin https://github.com/archiviogiovannibianco/archiviogiovannibianco.github.io.git
    git push -u origin main
    ```
 
 2. Su GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Ogni push su `main` esegue `.github/workflows/deploy.yml`: build con `bun`, base path
    letto da `actions/configure-pages`, pubblicazione su
-   `https://<utente>.github.io/<repo>/`.
+   `https://archiviogiovannibianco.github.io/`.
 
-Il workflow funziona sia per un repository di progetto (`/<repo>/`) sia per un repository
-utente (`<utente>.github.io`, base `/`), senza modifiche al codice.
+Il workflow funziona anche per un repository di progetto (sito servito da `/<repo>/`), senza
+modifiche al codice: `actions/configure-pages` fornisce base path e dominio corretti.
 
 ## Struttura
 
