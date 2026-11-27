@@ -4,6 +4,64 @@ import { opere } from '../data/opere';
 
 const base = import.meta.env.BASE_URL;
 const img = (file: string) => `${base}images/${file}`;
+
+// Dati strutturati schema.org: la scheda dell'artista (Person) e le opere
+// pubblicate (VisualArtwork). Nessun dato aggiuntivo rispetto alla pagina:
+// titoli, testi e immagini sono gli stessi mostrati nel catalogo.
+const siteOrigin = Astro.site ?? new URL('https://archiviogiovannibianco.github.io/');
+const siteUrl = siteOrigin.href;
+const personId = `${siteUrl}#giovanni-bianco`;
+const absolute = (file: string) => new URL(`${base}images/${file}`, siteOrigin).href;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      url: siteUrl,
+      name: 'Archivio Giovanni Bianco',
+      description:
+        'La storia e le opere di Giovanni Bianco (1942–1995), scultore calabrese di Sersale.',
+      inLanguage: 'it-IT',
+      about: { '@id': personId },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: 'Giovanni Bianco',
+      alternateName: 'Il Michelangelo del legno',
+      description:
+        'Scultore italiano di Sersale (Catanzaro), 4 giugno 1942 – 1 dicembre 1995. Di origine contadina, ha scolpito tronchi, radici e rami in volti, animali e figure femminili.',
+      birthDate: '1942-06-04',
+      deathDate: '1995-12-01',
+      birthPlace: {
+        '@type': 'Place',
+        name: 'Sersale',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Sersale',
+          addressRegion: 'Calabria',
+          addressCountry: 'IT',
+        },
+      },
+      jobTitle: 'Scultore',
+      knowsAbout: ['Scultura', 'Scultura in legno'],
+      image: absolute('hero-giovanni-bianco.jpg'),
+      url: siteUrl,
+      email: 'mailto:archivio.giovannibianco@gmail.com',
+    },
+    ...opere.map((opera) => ({
+      '@type': 'VisualArtwork',
+      name: opera.titolo,
+      description: opera.testo,
+      image: absolute(opera.immagine),
+      creator: { '@id': personId },
+      artform: 'Scultura',
+      artMedium: 'Legno',
+    })),
+  ],
+};
 ---
 
 <Base
@@ -11,6 +69,10 @@ const img = (file: string) => `${base}images/${file}`;
   description="La storia e le opere di Giovanni Bianco (1942–1995), scultore calabrese di Sersale: il Michelangelo del legno tra natura, volti, impegno politico e memoria."
   image="hero-giovanni-bianco.jpg"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
+
   <!-- HERO -->
   <section class="gb-hero">
     <div class="gb-hero-grid">
